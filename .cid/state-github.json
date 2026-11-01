@@ -1,7 +1,7 @@
 {
   "workflows": {
     "Nightly": {
-      "version": "0.11.12",
+      "version": "0.11.13",
       "name": "Nightly",
       "name_slug": "nightly",
       "job_timeout": 20,
@@ -18,6 +18,18 @@
         ],
         "environment_pattern": "nightly-.*"
       },
+      "network_global": [
+        "keyserver.ubuntu.com:443",
+        "github.com:443",
+        "api.github.com:443",
+        "codeload.github.com:443",
+        "uploads.github.com:443",
+        "objects.githubusercontent.com:443",
+        "raw.githubusercontent.com:443",
+        "release-assets.githubusercontent.com:443",
+        "ghcr.io:443",
+        "pkg-containers.githubusercontent.com:443"
+      ],
       "plan": {
         "name": "main",
         "stages": [
@@ -42,36 +54,7 @@
                 }
               ],
               "network": [
-                {
-                  "host": "keyserver.ubuntu.com:443"
-                },
-                {
-                  "host": "github.com:443"
-                },
-                {
-                  "host": "api.github.com:443"
-                },
-                {
-                  "host": "codeload.github.com:443"
-                },
-                {
-                  "host": "uploads.github.com:443"
-                },
-                {
-                  "host": "objects.githubusercontent.com:443"
-                },
-                {
-                  "host": "raw.githubusercontent.com:443"
-                },
-                {
-                  "host": "release-assets.githubusercontent.com:443"
-                },
-                {
-                  "host": "ghcr.io:443"
-                },
-                {
-                  "host": "pkg-containers.githubusercontent.com:443"
-                }
+                "prometheus-community.github.io:443"
               ]
             },
             "inputs": {},
@@ -88,28 +71,22 @@
             "access": {
               "env": [
                 {
-                  "name": "SONAR_HOST_URL",
-                  "description": "The SonarQube host URL."
+                  "name": "SONAR_HOST_URL"
                 },
                 {
-                  "name": "SONAR_ORGANIZATION",
-                  "description": "The SonarQube organization."
+                  "name": "SONAR_ORGANIZATION"
                 },
                 {
-                  "name": "SONAR_PROJECTKEY",
-                  "description": "The SonarQube project key."
+                  "name": "SONAR_PROJECTKEY"
                 },
                 {
-                  "name": "SONAR_DEFAULT_BRANCH",
-                  "description": "The SonarQube default branch."
+                  "name": "SONAR_DEFAULT_BRANCH"
                 },
                 {
-                  "name": "SONAR_REGION",
-                  "description": "Can be used to switch to the US-based SonarCloud instance."
+                  "name": "SONAR_REGION"
                 },
                 {
                   "name": "SONAR_TOKEN",
-                  "description": "The SonarQube authentication token.",
                   "required": true,
                   "secret": true
                 }
@@ -121,45 +98,9 @@
                 }
               ],
               "network": [
-                {
-                  "host": "sonarcloud.io:443"
-                },
-                {
-                  "host": "api.sonarcloud.io:443"
-                },
-                {
-                  "host": "scanner.sonarcloud.io:443"
-                },
-                {
-                  "host": "keyserver.ubuntu.com:443"
-                },
-                {
-                  "host": "github.com:443"
-                },
-                {
-                  "host": "api.github.com:443"
-                },
-                {
-                  "host": "codeload.github.com:443"
-                },
-                {
-                  "host": "uploads.github.com:443"
-                },
-                {
-                  "host": "objects.githubusercontent.com:443"
-                },
-                {
-                  "host": "raw.githubusercontent.com:443"
-                },
-                {
-                  "host": "release-assets.githubusercontent.com:443"
-                },
-                {
-                  "host": "ghcr.io:443"
-                },
-                {
-                  "host": "pkg-containers.githubusercontent.com:443"
-                }
+                "sonarcloud.io:443",
+                "api.sonarcloud.io:443",
+                "scanner.sonarcloud.io:443"
               ]
             },
             "inputs": {
@@ -220,8 +161,8 @@
         "pkg:github/cidverse/cid": {
           "id": "cidverse/cid",
           "type": "github",
-          "version": "0.11.12",
-          "hash": "279aaa33e33a96c7c740d961e710de7f804bfeea13a374de80a4ae3a5452206c",
+          "version": "0.11.13",
+          "hash": "800d546523ee7c20a031a250bff0651e741c89211b6bec66bfaeeeb47664f5c9",
           "gpg-fingerprint": "76A4948E69C62589C7B0AB84E414434DF5371FB6"
         }
       },
@@ -237,7 +178,7 @@
       ]
     },
     "Pull Request": {
-      "version": "0.11.12",
+      "version": "0.11.13",
       "name": "Pull Request",
       "name_slug": "pull-request",
       "job_timeout": 20,
@@ -252,6 +193,18 @@
         ],
         "environment_pattern": "pr-.*"
       },
+      "network_global": [
+        "keyserver.ubuntu.com:443",
+        "github.com:443",
+        "api.github.com:443",
+        "codeload.github.com:443",
+        "uploads.github.com:443",
+        "objects.githubusercontent.com:443",
+        "raw.githubusercontent.com:443",
+        "release-assets.githubusercontent.com:443",
+        "ghcr.io:443",
+        "pkg-containers.githubusercontent.com:443"
+      ],
       "plan": {
         "name": "main",
         "stages": [
@@ -276,36 +229,7 @@
                 }
               ],
               "network": [
-                {
-                  "host": "keyserver.ubuntu.com:443"
-                },
-                {
-                  "host": "github.com:443"
-                },
-                {
-                  "host": "api.github.com:443"
-                },
-                {
-                  "host": "codeload.github.com:443"
-                },
-                {
-                  "host": "uploads.github.com:443"
-                },
-                {
-                  "host": "objects.githubusercontent.com:443"
-                },
-                {
-                  "host": "raw.githubusercontent.com:443"
-                },
-                {
-                  "host": "release-assets.githubusercontent.com:443"
-                },
-                {
-                  "host": "ghcr.io:443"
-                },
-                {
-                  "host": "pkg-containers.githubusercontent.com:443"
-                }
+                "prometheus-community.github.io:443"
               ]
             },
             "inputs": {},
@@ -322,28 +246,22 @@
             "access": {
               "env": [
                 {
-                  "name": "SONAR_HOST_URL",
-                  "description": "The SonarQube host URL."
+                  "name": "SONAR_HOST_URL"
                 },
                 {
-                  "name": "SONAR_ORGANIZATION",
-                  "description": "The SonarQube organization."
+                  "name": "SONAR_ORGANIZATION"
                 },
                 {
-                  "name": "SONAR_PROJECTKEY",
-                  "description": "The SonarQube project key."
+                  "name": "SONAR_PROJECTKEY"
                 },
                 {
-                  "name": "SONAR_DEFAULT_BRANCH",
-                  "description": "The SonarQube default branch."
+                  "name": "SONAR_DEFAULT_BRANCH"
                 },
                 {
-                  "name": "SONAR_REGION",
-                  "description": "Can be used to switch to the US-based SonarCloud instance."
+                  "name": "SONAR_REGION"
                 },
                 {
                   "name": "SONAR_TOKEN",
-                  "description": "The SonarQube authentication token.",
                   "required": true,
                   "secret": true
                 }
@@ -355,45 +273,9 @@
                 }
               ],
               "network": [
-                {
-                  "host": "sonarcloud.io:443"
-                },
-                {
-                  "host": "api.sonarcloud.io:443"
-                },
-                {
-                  "host": "scanner.sonarcloud.io:443"
-                },
-                {
-                  "host": "keyserver.ubuntu.com:443"
-                },
-                {
-                  "host": "github.com:443"
-                },
-                {
-                  "host": "api.github.com:443"
-                },
-                {
-                  "host": "codeload.github.com:443"
-                },
-                {
-                  "host": "uploads.github.com:443"
-                },
-                {
-                  "host": "objects.githubusercontent.com:443"
-                },
-                {
-                  "host": "raw.githubusercontent.com:443"
-                },
-                {
-                  "host": "release-assets.githubusercontent.com:443"
-                },
-                {
-                  "host": "ghcr.io:443"
-                },
-                {
-                  "host": "pkg-containers.githubusercontent.com:443"
-                }
+                "sonarcloud.io:443",
+                "api.sonarcloud.io:443",
+                "scanner.sonarcloud.io:443"
               ]
             },
             "inputs": {
@@ -454,8 +336,8 @@
         "pkg:github/cidverse/cid": {
           "id": "cidverse/cid",
           "type": "github",
-          "version": "0.11.12",
-          "hash": "279aaa33e33a96c7c740d961e710de7f804bfeea13a374de80a4ae3a5452206c",
+          "version": "0.11.13",
+          "hash": "800d546523ee7c20a031a250bff0651e741c89211b6bec66bfaeeeb47664f5c9",
           "gpg-fingerprint": "76A4948E69C62589C7B0AB84E414434DF5371FB6"
         }
       },
@@ -471,7 +353,7 @@
       ]
     },
     "Release": {
-      "version": "0.11.12",
+      "version": "0.11.13",
       "name": "Release",
       "name_slug": "release",
       "job_timeout": 20,
@@ -487,6 +369,18 @@
         ],
         "environment_pattern": "release-.*"
       },
+      "network_global": [
+        "keyserver.ubuntu.com:443",
+        "github.com:443",
+        "api.github.com:443",
+        "codeload.github.com:443",
+        "uploads.github.com:443",
+        "objects.githubusercontent.com:443",
+        "raw.githubusercontent.com:443",
+        "release-assets.githubusercontent.com:443",
+        "ghcr.io:443",
+        "pkg-containers.githubusercontent.com:443"
+      ],
       "plan": {
         "name": "main",
         "stages": [
@@ -505,28 +399,22 @@
             "access": {
               "env": [
                 {
-                  "name": "SONAR_HOST_URL",
-                  "description": "The SonarQube host URL."
+                  "name": "SONAR_HOST_URL"
                 },
                 {
-                  "name": "SONAR_ORGANIZATION",
-                  "description": "The SonarQube organization."
+                  "name": "SONAR_ORGANIZATION"
                 },
                 {
-                  "name": "SONAR_PROJECTKEY",
-                  "description": "The SonarQube project key."
+                  "name": "SONAR_PROJECTKEY"
                 },
                 {
-                  "name": "SONAR_DEFAULT_BRANCH",
-                  "description": "The SonarQube default branch."
+                  "name": "SONAR_DEFAULT_BRANCH"
                 },
                 {
-                  "name": "SONAR_REGION",
-                  "description": "Can be used to switch to the US-based SonarCloud instance."
+                  "name": "SONAR_REGION"
                 },
                 {
                   "name": "SONAR_TOKEN",
-                  "description": "The SonarQube authentication token.",
                   "required": true,
                   "secret": true
                 }
@@ -538,45 +426,9 @@
                 }
               ],
               "network": [
-                {
-                  "host": "sonarcloud.io:443"
-                },
-                {
-                  "host": "api.sonarcloud.io:443"
-                },
-                {
-                  "host": "scanner.sonarcloud.io:443"
-                },
-                {
-                  "host": "keyserver.ubuntu.com:443"
-                },
-                {
-                  "host": "github.com:443"
-                },
-                {
-                  "host": "api.github.com:443"
-                },
-                {
-                  "host": "codeload.github.com:443"
-                },
-                {
-                  "host": "uploads.github.com:443"
-                },
-                {
-                  "host": "objects.githubusercontent.com:443"
-                },
-                {
-                  "host": "raw.githubusercontent.com:443"
-                },
-                {
-                  "host": "release-assets.githubusercontent.com:443"
-                },
-                {
-                  "host": "ghcr.io:443"
-                },
-                {
-                  "host": "pkg-containers.githubusercontent.com:443"
-                }
+                "sonarcloud.io:443",
+                "api.sonarcloud.io:443",
+                "scanner.sonarcloud.io:443"
               ]
             },
             "inputs": {
@@ -615,40 +467,7 @@
             "run-after-by-name": [
               "sonarqube-scan"
             ],
-            "access": {
-              "network": [
-                {
-                  "host": "keyserver.ubuntu.com:443"
-                },
-                {
-                  "host": "github.com:443"
-                },
-                {
-                  "host": "api.github.com:443"
-                },
-                {
-                  "host": "codeload.github.com:443"
-                },
-                {
-                  "host": "uploads.github.com:443"
-                },
-                {
-                  "host": "objects.githubusercontent.com:443"
-                },
-                {
-                  "host": "raw.githubusercontent.com:443"
-                },
-                {
-                  "host": "release-assets.githubusercontent.com:443"
-                },
-                {
-                  "host": "ghcr.io:443"
-                },
-                {
-                  "host": "pkg-containers.githubusercontent.com:443"
-                }
-              ]
-            },
+            "access": {},
             "inputs": {},
             "outputs": {
               "artifacts": [
@@ -684,40 +503,7 @@
               "env": [
                 {
                   "name": "GITHUB_TOKEN",
-                  "description": "The GitHub token to use for creating the release.",
                   "required": true
-                }
-              ],
-              "network": [
-                {
-                  "host": "keyserver.ubuntu.com:443"
-                },
-                {
-                  "host": "github.com:443"
-                },
-                {
-                  "host": "api.github.com:443"
-                },
-                {
-                  "host": "codeload.github.com:443"
-                },
-                {
-                  "host": "uploads.github.com:443"
-                },
-                {
-                  "host": "objects.githubusercontent.com:443"
-                },
-                {
-                  "host": "raw.githubusercontent.com:443"
-                },
-                {
-                  "host": "release-assets.githubusercontent.com:443"
-                },
-                {
-                  "host": "ghcr.io:443"
-                },
-                {
-                  "host": "pkg-containers.githubusercontent.com:443"
                 }
               ],
               "resources": [
@@ -763,21 +549,17 @@
             "access": {
               "env": [
                 {
-                  "name": "DEPLOYMENT_NAMESPACE",
-                  "description": "The namespace the deployment should be created in"
+                  "name": "DEPLOYMENT_NAMESPACE"
                 },
                 {
-                  "name": "KUBECONFIG_BASE64",
-                  "description": "The base 64 encoded Kubernetes config"
+                  "name": "KUBECONFIG_BASE64"
                 },
                 {
                   "name": "KUBECONFIG_.*_BASE64",
-                  "description": "Environment-specific base 64 encoded Kubernetes config",
                   "pattern": true
                 },
                 {
-                  "name": "HELMFILE_ARGS",
-                  "description": "Additional arguments to pass to the helmfile command"
+                  "name": "HELMFILE_ARGS"
                 }
               ],
               "executables": [
@@ -787,36 +569,7 @@
                 }
               ],
               "network": [
-                {
-                  "host": "keyserver.ubuntu.com:443"
-                },
-                {
-                  "host": "github.com:443"
-                },
-                {
-                  "host": "api.github.com:443"
-                },
-                {
-                  "host": "codeload.github.com:443"
-                },
-                {
-                  "host": "uploads.github.com:443"
-                },
-                {
-                  "host": "objects.githubusercontent.com:443"
-                },
-                {
-                  "host": "raw.githubusercontent.com:443"
-                },
-                {
-                  "host": "release-assets.githubusercontent.com:443"
-                },
-                {
-                  "host": "ghcr.io:443"
-                },
-                {
-                  "host": "pkg-containers.githubusercontent.com:443"
-                }
+                "prometheus-community.github.io:443"
               ]
             },
             "inputs": {},
@@ -858,8 +611,8 @@
         "pkg:github/cidverse/cid": {
           "id": "cidverse/cid",
           "type": "github",
-          "version": "0.11.12",
-          "hash": "279aaa33e33a96c7c740d961e710de7f804bfeea13a374de80a4ae3a5452206c",
+          "version": "0.11.13",
+          "hash": "800d546523ee7c20a031a250bff0651e741c89211b6bec66bfaeeeb47664f5c9",
           "gpg-fingerprint": "76A4948E69C62589C7B0AB84E414434DF5371FB6"
         }
       },
@@ -875,7 +628,7 @@
       ]
     },
     "Main": {
-      "version": "0.11.12",
+      "version": "0.11.13",
       "name": "Main",
       "name_slug": "main",
       "job_timeout": 20,
@@ -890,6 +643,18 @@
           "main"
         ]
       },
+      "network_global": [
+        "keyserver.ubuntu.com:443",
+        "github.com:443",
+        "api.github.com:443",
+        "codeload.github.com:443",
+        "uploads.github.com:443",
+        "objects.githubusercontent.com:443",
+        "raw.githubusercontent.com:443",
+        "release-assets.githubusercontent.com:443",
+        "ghcr.io:443",
+        "pkg-containers.githubusercontent.com:443"
+      ],
       "plan": {
         "name": "main",
         "stages": [
@@ -914,36 +679,7 @@
                 }
               ],
               "network": [
-                {
-                  "host": "keyserver.ubuntu.com:443"
-                },
-                {
-                  "host": "github.com:443"
-                },
-                {
-                  "host": "api.github.com:443"
-                },
-                {
-                  "host": "codeload.github.com:443"
-                },
-                {
-                  "host": "uploads.github.com:443"
-                },
-                {
-                  "host": "objects.githubusercontent.com:443"
-                },
-                {
-                  "host": "raw.githubusercontent.com:443"
-                },
-                {
-                  "host": "release-assets.githubusercontent.com:443"
-                },
-                {
-                  "host": "ghcr.io:443"
-                },
-                {
-                  "host": "pkg-containers.githubusercontent.com:443"
-                }
+                "prometheus-community.github.io:443"
               ]
             },
             "inputs": {},
@@ -960,28 +696,22 @@
             "access": {
               "env": [
                 {
-                  "name": "SONAR_HOST_URL",
-                  "description": "The SonarQube host URL."
+                  "name": "SONAR_HOST_URL"
                 },
                 {
-                  "name": "SONAR_ORGANIZATION",
-                  "description": "The SonarQube organization."
+                  "name": "SONAR_ORGANIZATION"
                 },
                 {
-                  "name": "SONAR_PROJECTKEY",
-                  "description": "The SonarQube project key."
+                  "name": "SONAR_PROJECTKEY"
                 },
                 {
-                  "name": "SONAR_DEFAULT_BRANCH",
-                  "description": "The SonarQube default branch."
+                  "name": "SONAR_DEFAULT_BRANCH"
                 },
                 {
-                  "name": "SONAR_REGION",
-                  "description": "Can be used to switch to the US-based SonarCloud instance."
+                  "name": "SONAR_REGION"
                 },
                 {
                   "name": "SONAR_TOKEN",
-                  "description": "The SonarQube authentication token.",
                   "required": true,
                   "secret": true
                 }
@@ -993,45 +723,9 @@
                 }
               ],
               "network": [
-                {
-                  "host": "sonarcloud.io:443"
-                },
-                {
-                  "host": "api.sonarcloud.io:443"
-                },
-                {
-                  "host": "scanner.sonarcloud.io:443"
-                },
-                {
-                  "host": "keyserver.ubuntu.com:443"
-                },
-                {
-                  "host": "github.com:443"
-                },
-                {
-                  "host": "api.github.com:443"
-                },
-                {
-                  "host": "codeload.github.com:443"
-                },
-                {
-                  "host": "uploads.github.com:443"
-                },
-                {
-                  "host": "objects.githubusercontent.com:443"
-                },
-                {
-                  "host": "raw.githubusercontent.com:443"
-                },
-                {
-                  "host": "release-assets.githubusercontent.com:443"
-                },
-                {
-                  "host": "ghcr.io:443"
-                },
-                {
-                  "host": "pkg-containers.githubusercontent.com:443"
-                }
+                "sonarcloud.io:443",
+                "api.sonarcloud.io:443",
+                "scanner.sonarcloud.io:443"
               ]
             },
             "inputs": {
@@ -1092,8 +786,8 @@
         "pkg:github/cidverse/cid": {
           "id": "cidverse/cid",
           "type": "github",
-          "version": "0.11.12",
-          "hash": "279aaa33e33a96c7c740d961e710de7f804bfeea13a374de80a4ae3a5452206c",
+          "version": "0.11.13",
+          "hash": "800d546523ee7c20a031a250bff0651e741c89211b6bec66bfaeeeb47664f5c9",
           "gpg-fingerprint": "76A4948E69C62589C7B0AB84E414434DF5371FB6"
         }
       },
