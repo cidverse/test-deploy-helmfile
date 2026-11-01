@@ -1,10 +1,10 @@
 {
   "workflows": {
     "Nightly": {
-      "version": "0.9.0",
+      "version": "0.11.12",
       "name": "Nightly",
       "name_slug": "nightly",
-      "job_timeout": 10,
+      "job_timeout": 20,
       "default_branch": "main",
       "container_runtime": "podman",
       "workflow_key": "nightly",
@@ -13,6 +13,9 @@
         "trigger_manual": true,
         "trigger_cron": true,
         "trigger_cron_schedule": "1 0 * * 0",
+        "trigger_schedule_branches": [
+          "main"
+        ],
         "environment_pattern": "nightly-.*"
       },
       "plan": {
@@ -81,7 +84,9 @@
         "pkg:github/cidverse/cid": {
           "id": "cidverse/cid",
           "type": "github",
-          "version": "0.9.0"
+          "version": "0.11.12",
+          "hash": "279aaa33e33a96c7c740d961e710de7f804bfeea13a374de80a4ae3a5452206c",
+          "gpg-fingerprint": "76A4948E69C62589C7B0AB84E414434DF5371FB6"
         }
       },
       "ignore_files": [
@@ -96,16 +101,19 @@
       ]
     },
     "Pull Request": {
-      "version": "0.9.0",
+      "version": "0.11.12",
       "name": "Pull Request",
       "name_slug": "pull-request",
-      "job_timeout": 10,
+      "job_timeout": 20,
       "default_branch": "main",
       "container_runtime": "podman",
       "workflow_key": "pull-request",
       "workflow_config": {
         "type": "pull-request",
         "trigger_pull_request": true,
+        "trigger_pull_request_branches": [
+          "main"
+        ],
         "environment_pattern": "pr-.*"
       },
       "plan": {
@@ -174,7 +182,9 @@
         "pkg:github/cidverse/cid": {
           "id": "cidverse/cid",
           "type": "github",
-          "version": "0.9.0"
+          "version": "0.11.12",
+          "hash": "279aaa33e33a96c7c740d961e710de7f804bfeea13a374de80a4ae3a5452206c",
+          "gpg-fingerprint": "76A4948E69C62589C7B0AB84E414434DF5371FB6"
         }
       },
       "ignore_files": [
@@ -189,10 +199,10 @@
       ]
     },
     "Release": {
-      "version": "0.9.0",
+      "version": "0.11.12",
       "name": "Release",
       "name_slug": "release",
-      "job_timeout": 10,
+      "job_timeout": 20,
       "default_branch": "main",
       "container_runtime": "podman",
       "workflow_key": "release",
@@ -326,6 +336,10 @@
                 },
                 {
                   "type": "binary"
+                },
+                {
+                  "type": "signature",
+                  "format": "pgp"
                 }
               ]
             },
@@ -361,7 +375,8 @@
                 },
                 {
                   "name": "KUBECONFIG_.*_BASE64",
-                  "description": "Environment-specific base 64 encoded Kubernetes config"
+                  "description": "Environment-specific base 64 encoded Kubernetes config",
+                  "pattern": true
                 },
                 {
                   "name": "HELMFILE_ARGS",
@@ -418,7 +433,9 @@
         "pkg:github/cidverse/cid": {
           "id": "cidverse/cid",
           "type": "github",
-          "version": "0.9.0"
+          "version": "0.11.12",
+          "hash": "279aaa33e33a96c7c740d961e710de7f804bfeea13a374de80a4ae3a5452206c",
+          "gpg-fingerprint": "76A4948E69C62589C7B0AB84E414434DF5371FB6"
         }
       },
       "ignore_files": [
@@ -433,10 +450,10 @@
       ]
     },
     "Main": {
-      "version": "0.9.0",
+      "version": "0.11.12",
       "name": "Main",
       "name_slug": "main",
-      "job_timeout": 10,
+      "job_timeout": 20,
       "default_branch": "main",
       "container_runtime": "podman",
       "workflow_key": "main",
@@ -514,7 +531,9 @@
         "pkg:github/cidverse/cid": {
           "id": "cidverse/cid",
           "type": "github",
-          "version": "0.9.0"
+          "version": "0.11.12",
+          "hash": "279aaa33e33a96c7c740d961e710de7f804bfeea13a374de80a4ae3a5452206c",
+          "gpg-fingerprint": "76A4948E69C62589C7B0AB84E414434DF5371FB6"
         }
       },
       "ignore_files": [
